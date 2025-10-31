@@ -1,17 +1,22 @@
-let _progress = document.querySelector(".progressWrap");
-let _bar = _progress.querySelector(".bar");
-let _number = _progress.querySelector("span");
-let limitNum = _progress.dataset.num;
-let dataNum = 0;
-console.log(limitNum);
+let _progress = document.querySelectorAll(".progressWrap");
 
-let timerNum = setInterval(function () {
-  dataNum++;
-  if (dataNum == limitNum) {
-    clearInterval(timerNum);
-  }
-  _bar.style.width = `${dataNum}%`;
-  _number.innerText = `${dataNum}%`;
-}, 20);
+_progress.forEach((item) => {
+  anibar(item);
+});
+
+function anibar(grph) {
+  let dataNum = 0;
+  let limitNum = grph.dataset.num;
+  let _bar = grph.querySelector(".bar");
+  let _number = grph.querySelector("span");
+  let timerNum = setInterval(function () {
+    dataNum++;
+    if (dataNum == limitNum) {
+      clearInterval(timerNum);
+    }
+    _bar.style.width = `${dataNum}%`;
+    _number.innerText = `${dataNum}%`;
+  }, 20);
+}
 
 // console.log(dataNum);
