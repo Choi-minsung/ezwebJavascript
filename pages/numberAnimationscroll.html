@@ -6,7 +6,13 @@
     <title>Document</title>
     <style>
       section {
-        height: 1000px;
+        padding: 50px;
+      }
+      .seci {
+        display: inline-block;
+        width: 300px;
+        height: 800px;
+        border: 1px solid #000;
       }
       .progressWrap {
         margin-top: 30px;
@@ -31,23 +37,25 @@
         line-height: 32px;
       }
     </style>
-    <script defer src="../js/numberAnimation.js"></script>
+    <script defer src="../js/numberAnimationscroll.js"></script>
   </head>
   <body>
     <h1>Number Animation</h1>
-    <div>
-      <div class="progressWrap" data-num="45">
-        <div class="bar"></div>
-        <span>0</span>
-      </div>
-      <div class="progressWrap" data-num="85">
-        <div class="bar"></div>
-        <span>0</span>
-      </div>
-      <div class="progressWrap" data-num="25">
-        <div class="bar"></div>
-        <span>0</span>
-      </div>
+    <section>
+      <div class="seci"></div>
+      <div class="seci"></div>
+      <div class="seci"></div>
+      <div class="seci"></div>
+    </section>
+
+    <div class="progressWrap" data-num="45">
+      <div class="bar"></div>
+      <span>0</span>
     </div>
+
+    <section>
+      <div class="seci"></div>
+      <div class="seci"></div>
+    </section>
   </body>
 </html>
