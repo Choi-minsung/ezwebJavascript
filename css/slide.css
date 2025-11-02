@@ -1,0 +1,379 @@
+ul {
+  display: flex;
+}
+.tab_menu {
+  display: flex;
+  position: relative;
+  z-index: 1;
+  padding: 0px;
+}
+li {
+  list-style: none;
+  margin-right: 40px;
+  padding: 0px;
+}
+li a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 15px 20px;
+  border: 1px solid #ccc;
+  color: #999;
+}
+
+li.active {
+  color: white;
+}
+/* li.active a {
+  color: #fff;
+  background-color: #444;
+} */
+.nav {
+  position: relative;
+}
+.highlight {
+  position: absolute;
+  width: 98px;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  background-color: #000;
+  transition: 0.4s cubic-bezier(0.65, 0, 0.35, 1);
+}
+
+.tab_content > p {
+  display: none;
+}
+.tab_content > p.active {
+  display: block;
+}
+
+.panel-header {
+  background: #444;
+  color: white;
+  padding: 4px;
+}
+.panel-body {
+  padding: 10px;
+  display: none;
+}
+.panel-question.active .panel-body {
+  display: block;
+}
+
+.img-grid-box {
+  width: 50%;
+  background: #ccc;
+  height: 200px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 10px;
+}
+.item {
+  border: 1px solid #000;
+  overflow: hidden;
+}
+.item img {
+  display: block;
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+}
+#overlayBox {
+  opacity: 0;
+  position: fixed;
+  pointer-events: none;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+}
+#overlayBox.visible {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+#overlayBox img {
+  display: block;
+  width: 500px;
+  height: 360px;
+  object-fit: contain;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.toTop {
+  display: flex;
+  width: 50px;
+  height: 50px;
+  background: #444;
+  color: white;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  bottom: 50px;
+  right: 50px;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease;
+}
+.toTop.visible {
+  opacity: 1;
+  visibility: visible;
+  /* transition: 0.3; */
+}
+
+.slide-wrapper {
+  position: relative;
+  overflow: hidden;
+  height: 500px;
+  background: #ccc;
+}
+.slide-container {
+  position: absolute;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  transition: left 0.3s ease-in;
+}
+.slide-container > li {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  position: absolute;
+}
+.slide1 {
+  background: #ffcc00;
+}
+.slide2 {
+  background: #31bb9b;
+}
+.slide3 {
+  background: #b86795;
+}
+.slide4 {
+  background: #26139f;
+}
+.slide5 {
+  background: #8e8d8c;
+}
+.contents {
+  display: flex;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  color: red;
+}
+.contents > p {
+  width: 50%;
+}
+.slide-container > li .contents > * {
+  opacity: 0;
+  transition: opacity 0.2s 0.4s ease-in-out;
+}
+.slide-container > li.active .contents > * {
+  opacity: 1;
+}
+.controls {
+  position: absolute;
+  display: flex;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.7);
+  color: #000;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.prev {
+  left: 20px;
+}
+.next {
+  right: 20px;
+}
+.prev.disabled,
+.next.disabled {
+  display: none;
+}
+.pager {
+  position: absolute;
+  bottom: 10px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.pager a {
+  display: block;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #ebebf2;
+  margin: 0 10px;
+  text-indent: -9999px;
+}
+.pager a.active {
+  background: #0b0b56;
+}
+
+.uls {
+  display: flex;
+  flex-direction: column;
+  color: red;
+}
+.uls li:first-child {
+  color: black;
+}
+.uls li:first-of-type {
+  color: blue;
+}
+
+.sre {
+  position: relative;
+  /* height: 180px; */
+  border: 1px solid #000;
+}
+.sro {
+  /* position: absolute; */
+  top: 100%;
+  border: 1px solid red;
+  height: 80px;
+  width: 200px;
+}
+.ure {
+  /* position: absolute; */
+  top: 20px;
+  border: 1px solid #000;
+}
+.bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  opacity: 0;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  transition: all 0.3s ease-out;
+  background-color: #f0f0f0;
+  /* z-index: 1; */
+}
+.bg-show .bg {
+  opacity: 1;
+  z-index: 1;
+}
+.ncontain {
+  max-width: 500px;
+  margin: 0px auto;
+  width: 100%;
+  /* position: relative; */
+  color: #04047e;
+  /* z-index: 3; */
+}
+
+.ncontain a {
+  border-bottom: 2px dashed #ff0000;
+  text-decoration: none;
+  position: relative;
+  /* z-index: 5; */
+}
+.ncontain a:hover {
+  z-index: 2;
+  border-bottom-color: transparent;
+  color: red;
+}
+
+.ncontain a::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 100%;
+  height: 100%;
+  min-height: 30px;
+  transform: translate(-50%, -50%) scaleX(0);
+  background-color: #fff;
+  padding: 10px;
+  transform-origin: 50% 50%;
+  transition: all 0.3s ease-out;
+  z-index: -1;
+}
+.ncontain a:hover::before {
+  transform: translate(-50%, -50%) scaleX(1);
+}
+/* .ncontain a::after {
+  content: "";
+  position: absolute;
+  display: block;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #16d659;
+  z-index: 3;
+} */
+
+.par {
+  position: relative;
+  width: 300px;
+  height: 200px;
+  color: #000;
+  background: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/485050/travel.jpg);
+}
+
+.par::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100px;
+  height: 20px;
+  background-color: #fff;
+  z-index: -1;
+}
+.par:hover::after {
+  position: relative;
+  z-index: 1;
+}
+.box1 {
+  position: relative;
+  background: #444; /* 부모 배경 */
+  color: white;
+  font-size: 2rem;
+  /* text-align: center; */
+  /* line-height: 150px; */
+  width: 300px;
+  height: 150px;
+}
+
+.box1::after {
+  content: "";
+  position: absolute;
+  width: 50px;
+  height: 30px;
+  left: 0;
+  top: 0;
+  /* inset: 0; */
+  background: rgba(214, 87, 87, 1); /* 밝은 오버레이 느낌 */
+  z-index: 1; /* 부모보다 위, 텍스트보다 아래 */
+}
+
+.box1 > span {
+  position: relative;
+  z-index: 2;
+}
