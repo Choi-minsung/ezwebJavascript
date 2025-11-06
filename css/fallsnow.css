@@ -1,0 +1,59 @@
+body {
+  padding: 0;
+  margin: 0;
+}
+* {
+  box-sizing: border-box;
+}
+main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background: linear-gradient(#161963, #1d167f);
+}
+
+@keyframes fall {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    top: 100vh;
+  }
+}
+@keyframes sway {
+  0% {
+    margin-left: 0;
+  }
+  25% {
+    margin-left: 50px;
+  }
+  50% {
+    margin-left: -50px;
+  }
+  75% {
+    margin-left: 50px;
+  }
+  100% {
+    margin-left: 0;
+  }
+}
+#snow-container {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100vh;
+  transition: opacity 0.5s;
+  overflow: hidden;
+}
+/*&#10052;&#10053;&#10054;*/
+.snow {
+  /* top: 0;
+  left: 50%; */
+  position: absolute;
+  color: skyblue;
+  animation: fall ease-in infinite, sway ease-in-out infinite;
+}
